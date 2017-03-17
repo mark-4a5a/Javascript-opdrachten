@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Boodschappenlijst</title>
+  </head>
+  <body>
+    <script>
+        function createShopList(){
+            var str = document.getElementById("shoplist").value; 
+            var res = str.replace(/, /g, "<br />");
+            document.getElementById("list").innerHTML += res;
+        }
+    </script>
+    <input type="text" id="shoplist" /><button type="button" onclick="createShopList();">Laat het me zien!</button>
+
+    <div id="list"></div>
+  </body>
+</html>
