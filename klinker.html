@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <input type="text" id="myText">
+  <button type="button" onclick="myFunction()">Resultaat 1</button>
+  <button type="button" onclick="myFunction2()">Resultaat 20</button>
+  <div id="demo"></div>
+  <script>
+  function myFunction() {
+      var str = document.getElementById("myText").value;
+      var strA = str.replace(/a/gi, "!");
+      var strE = strA.replace(/e/gi, "@");
+      var strO = strE.replace(/o/gi, "#");
+      var strU = strO.replace(/u/gi, "$");
+      var strI = strU.replace(/i/gi, "%");
+
+      document.getElementById("demo").innerHTML += strI + "</br>";
+  }
+    function myFunction2() {
+      var str = document.getElementById("myText").value;
+      var strA = str.replace(/a/gi, "&");
+      var strE = strA.replace(/e/gi, "*");
+      var strO = strE.replace(/o/gi, "=");
+      var strU = strO.replace(/u/gi, "+");
+      var strI = strU.replace(/i/gi, "- ");
+
+      document.getElementById("demo").innerHTML += strI + "</br>";
+  }
+  </script>
+
+</body>
+</html>
