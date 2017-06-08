@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Taxikosten</title>
+</head>
+<body>
+    <h3>Gereden kilometers</h3>
+    <div>Kilometers: <input type="number" id="kilometers" value="0"></div>
+    <h3>Begintijd</h3>
+    <div>Tijd: 
+    <input type="number" id="beginTijd" value="00.00"></div>
+    <div>Dag: 
+    <select name="beginDag" id="beginDag">
+        <option value="maandag">Maandag</option>
+        <option value="dinsdag">Dinsdag</option>
+        <option value="woensdag">Woensdag</option>
+        <option value="donderdag">Donderdag</option>
+        <option value="vrijdag">Vrijdag</option>
+        <option value="zaterdag">Zaterdag</option>
+        <option value="zondag">Zondag</option>
+    </select></div><br>
+    <button onclick="totalPrice()">Prijs berekenen</button><br>
+    <div id="demo"></div>
+
+    <script>
+    function count(){
+        //Berekenen hoeveel kilometer je rijd en berekenen hoeveel minuten het duurt..
+        var kilometer = document.getElementById("kilometers").value;
+        var minuten = document.getElementById("Kilometers").value;
+    }
+    function getTime(){
+        //Geeft aan wat de tijd is. Begin en eind.
+
+    }
+    function timePeriod(){
+        //Checken wat de tijdsperiode is en het tarief hierdoor berekenen.
+
+    }
+    function weekendCheck(){
+        //Checken of het in het weekend tarief valt.
+        var kilometer = document.getElementById("kilometers").value;
+        var begin = document.getElementById("beginTijd").value;
+        var dag = document.getElementById("beginDag").value;
+        if(dag == "vrijdag" && begin >= 22.00 || dag == "zaterdag" || dag == "zondag" || dag == "maandag" && begin < 7.00){
+            //Vrijdag vanaf 22.00, zaterdag, zondag en maandag tot 7.00.
+            document.getElementById("demo").innerHTML = "De prijs is &euro;" + kilometer.tofixed(2) * 1.15;
+        } else {
+            //Maandag vanaf 7.00, dinsdag, woensdag, donderdag en vrijdag tot 22.00.
+            document.getElementById("demo").innerHTML = "De prijs is &euro;" + kilometer.tofixed(2);
+        }
+    }
+    function totalPrice(){
+        //De totale prijs berekenen.
+        weekendCheck();
+
+    }
+    </script>
+</body>
+</html>

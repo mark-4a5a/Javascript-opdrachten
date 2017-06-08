@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Count to 100</title>
+  </head>
+  <body onload="setInterval(counting, 10);">
+  <script>
+    function counting(){
+    var count = 0;
+    if(count == 100){
+        document.body.style.backgroundColor = "black";
+        document.getElementById("countId").innerHTML = count;
+    } else {
+        for (count = 0; count <= 100; count++) { 
+        document.getElementById("countId").innerHTML = count;
+        }
+
+    }
+    }
+  </script>
+  <div id="countId"></div>
+  </body>
+</html>
