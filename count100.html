@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <title>Count to 100</title>
   </head>
-  <body onload="setInterval(counting, 10);">
+  <body>
   <script>
-    function counting(){
-    var count = 0;
-    if(count == 100){
-        document.body.style.backgroundColor = "black";
-        document.getElementById("countId").innerHTML = count;
+  var count = 0;
+  var id = setInterval(frame, 10);
+  function frame() {
+    if (count == 100) {
+      document.body.style.backgroundColor = "black";
+      document.body.style.color = "white";
+      clearInterval(id);
     } else {
-        for (count = 0; count <= 100; count++) { 
-        document.getElementById("countId").innerHTML = count;
-        }
-
+      count++; 
+      document.getElementById("countId").innerHTML = count; 
     }
-    }
+  }
   </script>
   <div id="countId"></div>
   </body>
